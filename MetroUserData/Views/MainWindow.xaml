@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MetroUserData"
         mc:Ignorable="d"
         Title="Metro Redux Diary Editor" Height="641" Width="525"
-        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+        DataContext="{Binding RelativeSource={RelativeSource Self}}" ResizeMode="NoResize" Icon="/Views/MetroIcon.ico">
 
     <Grid Height="592" VerticalAlignment="Top" HorizontalAlignment="Center" Width="505" Margin="0,0,0,0">
         <Grid.ColumnDefinitions>

@@ -251,6 +251,12 @@ namespace MetroUserData
                 return;
             }
 
+            if (MappedDiaryPagesList is null || MappedDiaryPagesList.Count == 0)
+            {
+                MessageBox.Show("Please first Load Diary Data. Nothing to save aborting.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             RegenerateXboxNetData();
         }
 
@@ -279,7 +285,7 @@ namespace MetroUserData
         {
             MessageBox.Show($"Metro Redux Diary Editor v{Assembly.GetEntryAssembly().GetName().Version}", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            // ToDo: Embed a text which has basic instructions on ussage and advice regarding getting achievements to pop
+            // ToDo: Embed a text which has basic instructions on ussage and advice regarding getting achievements to poplo
         }
     }
 }
