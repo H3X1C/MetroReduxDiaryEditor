@@ -1,0 +1,64 @@
+﻿<Window x:Class="MetroUserData.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MetroUserData"
+        mc:Ignorable="d"
+        Title="Metro Redux Diary Editor" Height="641" Width="525"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid Height="592" VerticalAlignment="Top" HorizontalAlignment="Center" Width="505" Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="233*"/>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="135*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="135*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel VerticalAlignment="Top">
+            <Menu Width="514">
+                <MenuItem Header="_File">
+                    <MenuItem x:Name="Load" Header="Load Diary Data" HorizontalAlignment="Left" Click="Load_Click"/>
+                    <MenuItem x:Name="Save" Header="Save Diary Data" HorizontalAlignment="Left" Click="Save_Click"/>
+                    <MenuItem x:Name="Exit" Header="Exit" HorizontalAlignment="Left" Click="Exit_Click"/>
+                </MenuItem>
+                <MenuItem Header="Edit">
+                    <MenuItem x:Name="Setall" Header="Set all as collected" HorizontalAlignment="Left" Click="Setall_Click"/>
+                    <MenuItem x:Name="SetNone" Header="Set all as not collected" HorizontalAlignment="Left" Click="SetNone_Click"/>
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem x:Name="About" Header="About" HorizontalAlignment="Left"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+
+        <DataGrid x:Name="DiaryPagesGrid" ItemsSource="{Binding Source=DiaryPagesList}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" Margin="11,35,10,10" Grid.Row="1" Grid.ColumnSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Level Name" Binding="{Binding LevelName}"/>
+                <DataGridTextColumn Header="Note#" Binding="{Binding NoteNumber}"/>
+                <DataGridTemplateColumn Header="Collected">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Path=Collected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Click="CheckBox_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+
+
+        </DataGrid>
+
+        <RadioButton x:Name="Metro2033Select" Content="Metro 2033 Redux" HorizontalAlignment="Left" Margin="11,23,0,0" VerticalAlignment="Top" Height="14" Width="116" Checked="Metro2033Select_Checked" IsChecked="True" />
+        <RadioButton x:Name="MetroLastLightSelect" Content="Metro Last Light Redux" HorizontalAlignment="Left" Margin="11,40,0,0" VerticalAlignment="Top" Height="15" Width="141" Checked="MetroLastLightSelect_Checked" Grid.RowSpan="2"/>
+        <Label x:Name="CollectedCount" Content="Diary Entries Collected: 0/0" HorizontalAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.64,-0.165" Width="362" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+
+
+
+    </Grid>
+</Window>
