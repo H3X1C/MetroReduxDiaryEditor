@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -272,6 +273,13 @@ namespace MetroUserData
             {
                 UpdateDiaryData(MappedDiaryPagesList.Select(x => { x.Collected = false; return x; }).ToList());
             }
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Metro Redux Diary Editor v{Assembly.GetEntryAssembly().GetName().Version}", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            // ToDo: Embed a text which has basic instructions on ussage and advice regarding getting achievements to pop
         }
     }
 }
