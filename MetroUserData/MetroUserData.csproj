@@ -27,4 +27,8 @@
     <Resource Include="Views\MetroIcon.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Assets\Screenshots\" />
+  </ItemGroup>
+
 </Project>

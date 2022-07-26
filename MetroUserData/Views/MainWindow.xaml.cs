@@ -283,9 +283,9 @@ namespace MetroUserData
 
         private void About_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Metro Redux Diary Editor v{Assembly.GetEntryAssembly().GetName().Version}", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"Metro Redux Diary Editor v{Assembly.GetEntryAssembly().GetName().Version}", "About", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            // ToDo: Embed a text which has basic instructions on ussage and advice regarding getting achievements to poplo
+            // ToDo: Embed a text which has basic instructions on ussage and advice regarding getting achievements to pop in steam. e.g. unlock 42/43 then get the last note in game
         }
     }
 }
