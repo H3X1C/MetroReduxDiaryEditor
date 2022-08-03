@@ -31,6 +31,7 @@
                     <MenuItem x:Name="SetNone" Header="Set all as not collected" HorizontalAlignment="Left" Click="SetNone_Click"/>
                 </MenuItem>
                 <MenuItem Header="Help">
+                    <MenuItem x:Name="ViewHelp" Header="View Help" HorizontalAlignment="Left" Click="Help_Click"/>
                     <MenuItem x:Name="About" Header="About" HorizontalAlignment="Left" Click="About_Click"/>
                 </MenuItem>
             </Menu>

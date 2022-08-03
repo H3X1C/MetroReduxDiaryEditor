@@ -1,0 +1,12 @@
+﻿==========================
+--- Metro Diary Editor ---
+==========================
+
+------ Introduction ------
+Allows you to modify the collection status of diary notes in both Metro 2033 Redux and Metro Last Light Redux.
+
+-- Achievement  Unlocks --
+Setting all notes to collected will not trigger the achievement for collecting all notes to pop!
+In order to get the achievement I recommend unlocking all but one note, preferably one in a easy 
+to find location. Go in game and pick up the final note and this will trigger the achievement to
+pop!
